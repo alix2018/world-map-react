@@ -35,7 +35,8 @@
           "allowSingleLine": true
         }
       ],
-      "eol-last": 0
+      "eol-last": 0,
+      "import/no-unassigned-import": 0
     },
     "ignores": [
       "docs"
@@ -92,6 +93,7 @@
     "postcss-nesting": "7.0.0",
     "postcss-preset-env": "6.6.0",
     "purgecss-webpack-plugin": "1.6.0",
+    "stylelint": "^13.3.2",
     "stylelint-config-standard": "18.3.0",
     "terser-webpack-plugin": "2.2.1",
     "url-loader": "2.3.0",
