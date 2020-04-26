@@ -22,6 +22,25 @@
     <noscript>
       Please enable JavaScript to view this website.
     </noscript>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCJK9TuK5gS3n1rFyV3lDMslh8qTI9n9Uo",
+        authDomain: "world-map-react.firebaseapp.com",
+        databaseURL: "https://world-map-react.firebaseio.com",
+        projectId: "world-map-react",
+        storageBucket: "world-map-react.appspot.com",
+        messagingSenderId: "33610130635",
+        appId: "1:33610130635:web:ab326036360c783e7ae74e",
+        measurementId: "G-BKQQ4CCF48"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
     <div id="app"></div>
   </body>
 </html>

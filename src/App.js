@@ -1,14 +1,11 @@
 import {useEffect} from 'react';
 import {useRoutes} from 'hookrouter';
 import './App.css';
-import ReactGA from 'react-ga';
 import routes from './router';
 
 function App() {
-  ReactGA.initialize('');
-  ReactGA.pageview(window.location.pathname + window.location.search);
+  firebase.analytics().logEvent('Test Firebase Analytics!');
   const routeResult = useRoutes(routes);
-
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
