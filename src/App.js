@@ -4,7 +4,7 @@ import './App.css';
 import routes from './router';
 
 function App() {
-  firebase.analytics().logEvent('Test Firebase Analytics!');
+  firebase.analytics().logEvent('Test Firebase Analytics!'); // eslint-disable-line no-undef
   const routeResult = useRoutes(routes);
   useEffect(() => {
     if ('scrollRestoration' in history) {
