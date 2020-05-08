@@ -1,0 +1,85 @@
+main,
+.landscape,
+section {
+  position: absolute;
+}
+
+main {
+  top: 0;
+  left: 0;
+  width: 52%;
+  height: 100vh;
+}
+
+section,
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  margin-top: 30px;
+}
+
+section {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 350px;
+}
+
+h1 {
+  margin: 0;
+  line-height: 100px;
+  font-size: 90px;
+  text-transform: uppercase;
+  font-family: 'Alegreya Medium', sans-serif;
+}
+
+input {
+  height: 60px;
+  width: calc(100% - 25px);
+  padding-left: 20px;
+  font-size: 17px;
+  border-radius: 6px;
+  background-color: var(--color-input-background);
+  color: var(--color-input-placeholder);
+  border-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+input:last-of-type {
+  margin-top: 20px;
+}
+
+button {
+  width: 150px;
+  height: 60px;
+  display: block;
+  margin: 40px 0 0 auto;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border-radius: 100px;
+  border: none;
+}
+
+button:active {
+  border: transparent;
+}
+
+.landscape {
+  top: 0;
+  right: 0;
+  width: 48%;
+  min-height: 100vh;
+  object-fit: contain;
+  background-image: url(../../public/assets/landscape.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transform: rotateY(180deg);
+}
