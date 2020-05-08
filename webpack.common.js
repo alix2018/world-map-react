@@ -115,7 +115,7 @@ module.exports = {
       {
         from: './config.js',
         to: './config.js'
-      },
+      }
     ]),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',

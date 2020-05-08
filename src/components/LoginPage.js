@@ -22,10 +22,10 @@ function LoginPage({isLoading, onLoginClick}) {
             </label>
           </form>
           <button type="submit" onClick={handleClick}>Log in</button>
-          {/* <span>{isLoading ? 'isloading' : 'NOT loading'}</span> */}
+          <span>{isLoading ? 'isloading' : ''}</span>
         </section>
       </main>
-      <div className="landscape"></div>
+      <div className="landscape"/>
     </>
   );
 }
