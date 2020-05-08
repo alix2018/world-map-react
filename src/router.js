@@ -1,8 +1,8 @@
 import React from 'react';
-import MainPage from './components/MainPage';
+import Login from './containers/Login';
 
 const routes = {
-  '/': () => <MainPage/>
+  '/': () => <Login/>
 };
 
 export default routes;

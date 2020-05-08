@@ -1,6 +1,6 @@
 {
   "name": "world-map-react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -36,7 +36,8 @@
         }
       ],
       "eol-last": 0,
-      "import/no-unassigned-import": 0
+      "import/no-unassigned-import": 0,
+      "react/prop-types": 0
     },
     "ignores": [
       "docs"
@@ -110,6 +111,10 @@
     "hookrouter": "1.2.3",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-ga": "2.6.0"
+    "react-ga": "2.6.0",
+    "react-redux": "7.2.0",
+    "redux": "4.0.5",
+    "redux-thunk": "2.3.0",
+    "reselect": "4.0.0"
   }
 }
