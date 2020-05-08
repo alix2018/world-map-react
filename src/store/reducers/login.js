@@ -1,7 +1,11 @@
 import {LOGIN_ACTIONS_TYPE} from '../actions/login';
 
-function reducer(state = {}, action) {
-  const {type} = action;
+const initialState = {
+  isLoading: false
+}
+
+function reducer(state = initialState, action) {
+  const {type, payload, error} = action;
   const {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR} = LOGIN_ACTIONS_TYPE;
   switch (type) {
     case LOGIN_REQUEST: {
@@ -15,7 +19,7 @@ function reducer(state = {}, action) {
       return {
         ...state,
         isLoading: false,
-        token: action.payload.token
+        token: payload.token
       };
     }
 
@@ -23,7 +27,7 @@ function reducer(state = {}, action) {
       return {
         ...state,
         isLoading: false,
-        error: action.error
+        error: error
       };
     }
 
