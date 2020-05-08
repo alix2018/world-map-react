@@ -2,7 +2,7 @@ import {LOGIN_ACTIONS_TYPE} from '../actions/login';
 
 const initialState = {
   isLoading: false
-}
+};
 
 function reducer(state = initialState, action) {
   const {type, payload, error} = action;
@@ -27,7 +27,7 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        error: error
+        error
       };
     }
 

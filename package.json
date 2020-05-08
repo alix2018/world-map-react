@@ -36,7 +36,8 @@
         }
       ],
       "eol-last": 0,
-      "import/no-unassigned-import": 0
+      "import/no-unassigned-import": 0,
+      "react/prop-types": 0
     },
     "ignores": [
       "docs"
