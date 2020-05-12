@@ -1,3 +1,7 @@
+:root {
+  --margin-left: 20px;
+}
+
 main,
 .landscape,
 section {
@@ -37,16 +41,37 @@ h1 {
   font-family: 'Alegreya Medium', sans-serif;
 }
 
+label,
 input {
-  height: 60px;
-  width: calc(100% - 25px);
-  padding-left: 20px;
-  font-size: 17px;
-  border-radius: 6px;
-  background-color: var(--color-input-background);
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}
+
+div[class~='field'] {
+  position: relative;
+}
+
+label {
+  position: absolute;
   color: var(--color-input-placeholder);
+  transform: translate(var(--margin-left), 42px) scale(1);
+  transition: all 0.2s ease-in-out;
+  cursor: text;
+}
+
+label.active {
+  font-size: 12px;
+  transform: translate(calc(var(--margin-left) + 1px), 31px) scale(1);
+}
+
+input {
+  height: 48px;
+  width: calc(100% - 25px);
+  padding: 12px var(--margin-left) 0;
+  border-radius: 6px;
+  color: var(--color-input-text);
+  background-color: var(--color-input-background);
   border-color: transparent;
-  letter-spacing: 0.5px;
 }
 
 input:last-of-type {
@@ -65,6 +90,7 @@ button {
   background-color: var(--color-blue);
   border-radius: 100px;
   border: none;
+  cursor: pointer;
 }
 
 button:active {

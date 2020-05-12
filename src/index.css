@@ -8,7 +8,8 @@
 
   /* Inputs */
   --color-input-background: #ECF1F4;
-  --color-input-placeholder: #3A3A3A;
+  --color-input-placeholder: #717171;
+  --color-input-text: #3A3A3A;
 }
 
 @font-face {
