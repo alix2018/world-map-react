@@ -27,15 +27,16 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
     <script type="text/javascript" src="../config.js"></script>
     <script>
+      var configFirebase = config.firebaseConfig;
       var firebaseConfig = {
-        apiKey: config.apiKey,
-        authDomain: config.authDomain,
-        databaseURL: config.databaseURL,
-        projectId: config.projectId,
-        storageBucket: config.storageBucket,
-        messagingSenderId: config.messagingSenderId,
-        appId: config.appId,
-        measurementId: config.measurementId
+        apiKey: configFirebase.apiKey,
+        authDomain: configFirebase.authDomain,
+        databaseURL: configFirebase.databaseURL,
+        projectId: configFirebase.projectId,
+        storageBucket: configFirebase.storageBucket,
+        messagingSenderId: configFirebase.messagingSenderId,
+        appId: configFirebase.appId,
+        measurementId: configFirebase.measurementId
       };
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();

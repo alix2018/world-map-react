@@ -1,4 +1,6 @@
-const baseUrl = 'http://localhost:3000';
+import '../../config';
+
+const baseUrl = config.baseUrl;
 
 export const get = (urlPath, config = {}) => {
   const finalUrl = new URL(urlPath, baseUrl);

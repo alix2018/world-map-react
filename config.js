@@ -10,5 +10,6 @@ const config = {
     messagingSenderId: '33610130635',
     appId: '1:33610130635:web:ab326036360c783e7ae74e',
     measurementId: 'G-BKQQ4CCF48'
-  }
+  },
+  baseUrl: 'http://localhost:3000'
 };
