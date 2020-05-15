@@ -1,5 +1,5 @@
 :root {
-  --margin-left: 20px;
+  --margin-left: 24px;
 }
 
 main,
@@ -47,21 +47,21 @@ input {
   letter-spacing: 0.4px;
 }
 
-div[class~='field'] {
+div[class$='field'] {
   position: relative;
 }
 
 label {
   position: absolute;
   color: var(--color-input-placeholder);
-  transform: translate(var(--margin-left), 42px) scale(1);
+  transform: translate(var(--margin-left), 23px) scale(1);
   transition: all 0.2s ease-in-out;
   cursor: text;
 }
 
 label.active {
   font-size: 12px;
-  transform: translate(calc(var(--margin-left) + 1px), 31px) scale(1);
+  transform: translate(calc(var(--margin-left) + 1px), 11px) scale(1);
 }
 
 input {
@@ -74,8 +74,32 @@ input {
   border-color: transparent;
 }
 
-input:last-of-type {
+input:hover,
+input:focus {
+  background-color: var(--color-input-background-hover);
+}
+
+.password-field {
   margin-top: 20px;
+}
+
+input[type='password']:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../public/assets/password-hide.svg);
+}
+
+img[alt^='eye'] {
+  position: absolute;
+  top: calc(50% + 2px);
+  right: 0;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
 }
 
 button {
@@ -91,6 +115,10 @@ button {
   border-radius: 100px;
   border: none;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-button-hover);
 }
 
 button:active {

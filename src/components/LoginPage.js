@@ -6,6 +6,8 @@ function LoginPage({isLoading, onLoginClick}) {
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [isPasswordFocus, setIsPasswordFocus] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
 
   function handleClick() {
     if (onLoginClick) {
@@ -33,6 +35,10 @@ function LoginPage({isLoading, onLoginClick}) {
     }
   }
 
+  function toggleShowPassword() {
+    setShowPassword(!showPassword);
+  }
+
   return (
     <>
       <main>
@@ -45,7 +51,9 @@ function LoginPage({isLoading, onLoginClick}) {
             </div>
             <div className="password-field">
               <label className={isPasswordFocus ? 'active' : ''} aria-label="password-field" onClick={onPasswordFocus}>Password</label>
-              <input type="password" value={passwordValue} onFocus={onPasswordFocus} onBlur={onPasswordBlur} onChange={e => setPasswordValue(e.target.value)}/>
+              <input type={showPassword ? 'text' : 'password'} value={passwordValue} onFocus={onPasswordFocus} onBlur={onPasswordBlur} onChange={e => setPasswordValue(e.target.value)} />
+              <img alt="eye hide" src="../../public/assets/password-show.svg" onClick={toggleShowPassword} hidden={showPassword}/>
+              <img alt="eye hide" src="../../public/assets/password-hide.svg" onClick={toggleShowPassword} hidden={!showPassword}/>
             </div>
           </form>
           <button type="submit" onClick={handleClick}>Log in</button>
