@@ -17,7 +17,7 @@ export const loginSuccess = token => ({
 
 export const loginError = error => ({
   type: LOGIN_ACTIONS_TYPE.LOGIN_ERROR,
-  error
+  payload: {error}
 });
 
 export const fetchToken = (email, password) => {
@@ -33,6 +33,7 @@ export const fetchToken = (email, password) => {
         dispatch(loginSuccess(payload));
       })
       .catch(error => {
+        console.warn(`Error: Status ${error.status}, Code ${error.code}`);
         dispatch(loginError(error));
       });
   };

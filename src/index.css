@@ -5,6 +5,7 @@
   --color-blue: #5DA2D5;
   --color-red: #F78888;
   --color-yellow: #F3D250;
+  --color-error: #E20225;
 
   /* Inputs */
   --color-input-background: #ECF1F4;
@@ -34,4 +35,39 @@ body {
   padding: 0;
   font-family: 'Lato-Regular', sans-serif;
   color: var(--color-black);
+}
+
+error {
+  display: flex;
+  flex-direction: row;
+  width: 320px;
+  margin: 20px auto 0;
+  align-items: center;
+  justify-content: center;
+}
+
+error div {
+  content: '';
+  margin-right: 10px;
+  height: 19px;
+  width: 19px;
+  min-width: 19px;
+  border-radius: 19px;
+  vertical-align: sub;
+  background-image: url(../public/assets/icon-cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 7px;
+  background-color: var(--color-error);
+}
+
+error p {
+  padding: 0;
+  margin: 0;
+  width: 350px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color: var(--color-error);
 }

@@ -2,6 +2,17 @@ import '../../config';
 
 const {baseUrl} = config; // eslint-disable-line no-undef
 
+function errorHandler(res) {
+  if (!res.ok) {
+    const errorObj = new Error();
+    errorObj.status = res.status;
+    errorObj.code = res.statusText;
+    throw errorObj;
+  }
+
+  return res;
+}
+
 export const get = (urlPath, config = {}) => {
   const finalUrl = new URL(urlPath, baseUrl);
   const stringUrl = finalUrl.toString();
@@ -39,8 +50,6 @@ export const postJson = (urlPath, body, config = {headers: {}}) => {
     },
     body: JSON.stringify(body)
   })
-    .then(res => res.json())
-    .catch(error => {
-      console.warn(error);
-    });
+    .then(errorHandler)
+    .then(res => res.json());
 };
