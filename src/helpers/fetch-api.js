@@ -1,6 +1,6 @@
 import '../../config';
 
-const baseUrl = config.baseUrl;
+const {baseUrl} = config; // eslint-disable-line no-undef
 
 export const get = (urlPath, config = {}) => {
   const finalUrl = new URL(urlPath, baseUrl);
