@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import LoginPage from '../components/LoginPage';
 import {fetchToken} from '../store/actions/login';
-import {getIsLoading, getToken, getStatusError} from '../store/selectors/login';
+import {getIsLoading, getStatusError} from '../store/selectors/login';
 
 function Login() {
   const dispatch = useDispatch();
