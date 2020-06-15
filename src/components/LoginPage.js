@@ -42,7 +42,7 @@ function LoginPage({statusError, onLoginClick}) {
   return (
     <>
       <article className="login">
-        <img alt="logo" src="../../public/assets/worldmappie.svg" width="120px">
+        <img alt="logo" src="../../public/assets/worldmappie.svg" width="120px"/>
         <a className="registration">Registration</a>
         <section>
           <h1>Time to travel</h1>
