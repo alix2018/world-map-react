@@ -41,7 +41,9 @@ function LoginPage({statusError, onLoginClick}) {
 
   return (
     <>
-      <main>
+      <article className="login">
+        <img alt="logo" src="../../public/assets/worldmappie.svg" width="120px">
+        <a className="registration">Registration</a>
         <section>
           <h1>Time to travel</h1>
           <form>
@@ -64,7 +66,7 @@ function LoginPage({statusError, onLoginClick}) {
           ) : null}
           <button type="submit" onClick={handleClick}>Log in</button>
         </section>
-      </main>
+      </article>
       <div className="landscape"/>
     </>
   );
