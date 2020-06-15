@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import LoginPage from '../components/LoginPage';
 import {fetchToken} from '../store/actions/login';
 import {getIsLoading, getStatusError, getToken} from '../store/selectors/login';
+import Cookies from '../helpers/cookies';
 
 function Login() {
   const dispatch = useDispatch();
@@ -11,7 +12,12 @@ function Login() {
   const statusError = useSelector(getStatusError);
   const token = useSelector(getToken);
 
-  if (token) {
+  if (token && !Cookies.getItem('token')) {
+    Cookies.setItem('token', token);
+    navigate('/home');
+  }
+
+  if (Cookies.getItem('token')) {
     navigate('/home');
   }
 
