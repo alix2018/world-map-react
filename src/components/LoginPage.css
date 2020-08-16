@@ -7,7 +7,7 @@
 }
 
 article,
-.landscape,
+.photo,
 section {
   position: absolute;
 }
@@ -19,7 +19,7 @@ article {
   height: 100vh;
 }
 
-img[alt='logo'] {
+img[alt~='logo'] {
   margin: 28px 0 0 28px;
 }
 
@@ -82,7 +82,7 @@ input {
   letter-spacing: 0.4px;
 }
 
-div[class$='field'] {
+section form div {
   position: relative;
 }
 
@@ -114,7 +114,7 @@ input:focus {
   background-color: var(--color-input-background-hover);
 }
 
-.password-field {
+section form div:last-of-type {
   margin-top: 20px;
 }
 
@@ -160,7 +160,7 @@ button:active {
   border: transparent;
 }
 
-.landscape {
+.photo {
   top: 0;
   right: 0;
   width: 48%;

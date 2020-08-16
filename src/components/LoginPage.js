@@ -42,20 +42,20 @@ function LoginPage({statusError, onLoginClick}) {
   return (
     <>
       <article className="login">
-        <img alt="logo" src="../../public/assets/worldmappie.svg" width="120px"/>
+        <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
         <a className="registration">Registration</a>
         <section>
           <h1>Time to travel</h1>
           <form>
-            <div className="email-field">
+            <div>
               <label className={isEmailFocus ? 'active' : ''} aria-label="email-field" onClick={onEmailFocus}>Email</label>
               <input type="text" value={emailValue} onFocus={onEmailFocus} onBlur={onEmailBlur} onChange={e => setEmailValue(e.target.value)}/>
             </div>
-            <div className="password-field">
+            <div>
               <label className={isPasswordFocus ? 'active' : ''} aria-label="password-field" onClick={onPasswordFocus}>Password</label>
               <input type={showPassword ? 'text' : 'password'} value={passwordValue} onFocus={onPasswordFocus} onBlur={onPasswordBlur} onChange={e => setPasswordValue(e.target.value)}/>
-              <img hidden={showPassword} alt="eye show" src="../../public/assets/password-show.svg" onClick={toggleShowPassword}/>
-              <img hidden={!showPassword} alt="eye hide" src="../../public/assets/password-hide.svg" onClick={toggleShowPassword}/>
+              <img hidden={showPassword} alt="eye show" src="/public/assets/password-show.svg" onClick={toggleShowPassword}/>
+              <img hidden={!showPassword} alt="eye hide" src="/public/assets/password-hide.svg" onClick={toggleShowPassword}/>
             </div>
           </form>
           {statusError ? (
@@ -67,7 +67,7 @@ function LoginPage({statusError, onLoginClick}) {
           <button type="submit" onClick={handleClick}>Log in</button>
         </section>
       </article>
-      <div className="landscape"/>
+      <div className="photo"/>
     </>
   );
 }
