@@ -1,0 +1,9 @@
+{
+  "login": {
+    "a_registration": "Registration",
+    "h1_time-to-travel": "Time to travel",
+    "label_email": "Email",
+    "label_password": "Password",
+    "btn_login": "Log in"
+  }
+}
