@@ -1,4 +1,19 @@
-:root {
+@font-face {
+  font-family: 'Alegreya Medium';
+  src: url(/public/fonts/Alegreya-Medium.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Lato Regular';
+  src: url(/public/fonts/Lato-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Lato Black';
+  src: url(/public/fonts/Lato-Black.ttf) format('ttf');
+}
+
+:host {
   /* Colors */
   --color-black: #272838;
   --color-white: #FFF;
@@ -13,21 +28,19 @@
   --color-input-placeholder: #717171;
   --color-input-text: #3A3A3A;
   --color-button-hover: #4092C4;
-}
 
-@font-face {
-  font-family: 'Alegreya Medium';
-  src: url('../public/fonts/Alegreya-Medium.ttf') format('ttf');
-}
+  /* Fonts */
+  --alegreya-medium-font-family: {
+    font-family: 'Alegreya Medium', sans-serif;
+  };
 
-@font-face {
-  font-family: 'Lato-Regular';
-  src: url('../public/fonts/Lato-Regular.ttf') format('ttf');
-}
+  --lato-regular-font-family: {
+    font-family: 'Lato Regular', sans-serif;
+  };
 
-@font-face {
-  font-family: 'Lato Black';
-  src: url('../public/fonts/Lato-Black.ttf') format('ttf');
+  --lato-black-font-family: {
+    font-family: 'Lato Black', sans-serif;
+  };
 }
 
 body {
@@ -54,7 +67,7 @@ error div {
   min-width: 19px;
   border-radius: 19px;
   vertical-align: sub;
-  background-image: url(../public/assets/icon-cross.svg);
+  background-image: url(/public/assets/icon-cross.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 7px;

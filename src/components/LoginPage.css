@@ -1,4 +1,8 @@
-:root {
+@import url('../index.css');
+
+:host {
+  font-family: 'Lato Regular', sans-serif;
+
   --margin-left: 24px;
 }
 
@@ -28,6 +32,7 @@ a.registration {
   font-size: 14px;
   color: var(--color-blue);
   cursor: pointer;
+  font-family: 'Lato Black', sans-serif;
 }
 
 a.registration:after {

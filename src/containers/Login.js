@@ -1,7 +1,9 @@
 import React from 'react';
+import root from 'react-shadow';
 import {navigate} from 'hookrouter';
 import {useSelector, useDispatch} from 'react-redux';
 import LoginPage from '../components/LoginPage';
+import styles from '../components/LoginPage.css';
 import {fetchToken} from '../store/actions/login';
 import {getIsLoading, getStatusError, getToken} from '../store/selectors/login';
 import Cookies from '../helpers/cookies';
@@ -25,7 +27,12 @@ function Login() {
     dispatch(fetchToken(email, password));
   }
 
-  return <LoginPage isLoading={isLoading} statusError={statusError} onLoginClick={handleLoginClick}/>;
+  return (
+    <root.section id="login-page">
+      <LoginPage isLoading={isLoading} statusError={statusError} onLoginClick={handleLoginClick}/>
+      <style type="text/css">{styles}</style>
+    </root.section>
+  );
 }
 
 export default Login;
