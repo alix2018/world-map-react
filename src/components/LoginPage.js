@@ -10,11 +10,34 @@ function LoginPage({statusError, onLoginClick}) {
   const [showPassword, setShowPassword] = useState(false);
   const wrongCredentials = 'The combination of your email and password is incorrect. Please try again.';
 
-function LoginPage({isLoading, onLoginClick}) {
   function handleClick() {
     if (onLoginClick) {
-      onLoginClick();
+      onLoginClick(emailValue, passwordValue);
     }
+  }
+
+  function onEmailFocus() {
+    setIsEmailFocus(true);
+  }
+
+  function onEmailBlur() {
+    if (!emailValue) {
+      setIsEmailFocus(false);
+    }
+  }
+
+  function onPasswordFocus() {
+    setIsPasswordFocus(true);
+  }
+
+  function onPasswordBlur() {
+    if (!passwordValue) {
+      setIsPasswordFocus(false);
+    }
+  }
+
+  function toggleShowPassword() {
+    setShowPassword(!showPassword);
   }
 
   return (

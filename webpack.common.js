@@ -53,12 +53,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: devMode
-            }
-          },
+          'to-string-loader',
           'css-loader',
           'postcss-loader'
         ]
@@ -77,7 +72,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff)$/,
+        test: /\.(ttf|woff)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -106,6 +101,10 @@ module.exports = {
       {
         from: 'public/assets',
         to: 'public/assets'
+      },
+      {
+        from: './config.js',
+        to: './config.js'
       }
     ]),
     new MiniCssExtractPlugin({

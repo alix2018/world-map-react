@@ -5,7 +5,7 @@ const initialState = {
 };
 
 function reducer(state = initialState, action) {
-  const {type, payload, error} = action;
+  const {type, payload} = action;
   const {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR} = LOGIN_ACTIONS_TYPE;
   switch (type) {
     case LOGIN_REQUEST: {
@@ -27,7 +27,10 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        error
+        error: {
+          status: payload.error.status,
+          code: payload.error.code
+        }
       };
     }
 
