@@ -25,19 +25,19 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+    <script type="text/javascript" src="../config.js"></script>
     <script>
-      // Your web app's Firebase configuration
+      var configFirebase = config.firebaseConfig;
       var firebaseConfig = {
-        apiKey: "AIzaSyCJK9TuK5gS3n1rFyV3lDMslh8qTI9n9Uo",
-        authDomain: "world-map-react.firebaseapp.com",
-        databaseURL: "https://world-map-react.firebaseio.com",
-        projectId: "world-map-react",
-        storageBucket: "world-map-react.appspot.com",
-        messagingSenderId: "33610130635",
-        appId: "1:33610130635:web:ab326036360c783e7ae74e",
-        measurementId: "G-BKQQ4CCF48"
+        apiKey: configFirebase.apiKey,
+        authDomain: configFirebase.authDomain,
+        databaseURL: configFirebase.databaseURL,
+        projectId: configFirebase.projectId,
+        storageBucket: configFirebase.storageBucket,
+        messagingSenderId: configFirebase.messagingSenderId,
+        appId: configFirebase.appId,
+        measurementId: configFirebase.measurementId
       };
-      // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>

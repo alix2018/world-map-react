@@ -1,3 +1,8 @@
-:host {
-  color: var(--main-color);
+* {
+  outline: transparent;
+}
+
+input,
+button {
+  font-family: 'Lato-Regular', sans-serif;
 }

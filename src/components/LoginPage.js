@@ -1,17 +1,73 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './LoginPage.css';
 
-function LoginPage({isLoading, onLoginClick}) {
+function LoginPage({statusError, onLoginClick}) {
+  const [isEmailFocus, setIsEmailFocus] = useState(false);
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [isPasswordFocus, setIsPasswordFocus] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const wrongCredentials = 'The combination of your email and password is incorrect. Please try again.';
+
   function handleClick() {
     if (onLoginClick) {
-      onLoginClick();
+      onLoginClick(emailValue, passwordValue);
     }
+  }
+
+  function onEmailFocus() {
+    setIsEmailFocus(true);
+  }
+
+  function onEmailBlur() {
+    if (!emailValue) {
+      setIsEmailFocus(false);
+    }
+  }
+
+  function onPasswordFocus() {
+    setIsPasswordFocus(true);
+  }
+
+  function onPasswordBlur() {
+    if (!passwordValue) {
+      setIsPasswordFocus(false);
+    }
+  }
+
+  function toggleShowPassword() {
+    setShowPassword(!showPassword);
   }
 
   return (
     <>
-      <h1>LOGIN PAGE</h1>
-      <button type="submit" onClick={handleClick}>Log in</button>
-      <div>{isLoading ? 'isloading' : 'NOT loading'}</div>
+      <article className="login">
+        <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
+        <a className="registration">Registration</a>
+        <section>
+          <h1>Time to travel</h1>
+          <form>
+            <div>
+              <label className={isEmailFocus ? 'active' : ''} aria-label="email-field" onClick={onEmailFocus}>Email</label>
+              <input type="text" value={emailValue} onFocus={onEmailFocus} onBlur={onEmailBlur} onChange={e => setEmailValue(e.target.value)}/>
+            </div>
+            <div>
+              <label className={isPasswordFocus ? 'active' : ''} aria-label="password-field" onClick={onPasswordFocus}>Password</label>
+              <input type={showPassword ? 'text' : 'password'} value={passwordValue} onFocus={onPasswordFocus} onBlur={onPasswordBlur} onChange={e => setPasswordValue(e.target.value)}/>
+              <img hidden={showPassword} alt="eye show" src="/public/assets/password-show.svg" onClick={toggleShowPassword}/>
+              <img hidden={!showPassword} alt="eye hide" src="/public/assets/password-hide.svg" onClick={toggleShowPassword}/>
+            </div>
+          </form>
+          {statusError ? (
+            <error>
+              <div/>
+              <p>{statusError ? wrongCredentials : ''}</p>
+            </error>
+          ) : null}
+          <button type="submit" onClick={handleClick}>Log in</button>
+        </section>
+      </article>
+      <div className="photo"/>
     </>
   );
 }
