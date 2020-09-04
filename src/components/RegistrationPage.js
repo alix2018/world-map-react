@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
-import './LoginPage.css';
+import './RegistrationPage.css';
 import * as translations from '../../translations';
 
-function LoginPage({statusError, onLoginClick}) {
+function RegistrationPage({statusError, onLoginClick}) {
   const text = translations.login;
   const [isEmailFocus, setIsEmailFocus] = useState(false);
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [isPasswordFocus, setIsPasswordFocus] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [imageSide, setImageSide] = useState('right');
 
   function handleClick() {
     if (onLoginClick) {
@@ -40,18 +39,13 @@ function LoginPage({statusError, onLoginClick}) {
   function toggleShowPassword() {
     setShowPassword(!showPassword);
   }
-
-  function onRegistrationClick() {
-    setImageSide('left');
-  }
-
   return (
     <>
       <article>
-        <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
-        <a aria-label="go to registration" className={imageSide}>{text.a_registration} onClick={onRegistrationClick}</a>
+        {/* <a aria-label="go to login">Login</a> */}
         <section>
-          <h1>{text['h1_time-to-travel']}</h1>
+          <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
+          <h2>Sign up to follow your trips!</h2>
           <form>
             <div>
               <label className={isEmailFocus ? 'active' : ''} aria-label="email-field" onClick={onEmailFocus}>{text.label_email}</label>
@@ -70,12 +64,11 @@ function LoginPage({statusError, onLoginClick}) {
               <p>{statusError ? text.error_combinaison : ''}</p>
             </error>
           ) : null}
-          <button type="submit" onClick={handleClick}>{text.btn_login}</button>
+          <button type="submit" onClick={handleClick}>Register</button>
         </section>
       </article>
-      <div className={`photo ${imageSide}`}/>
     </>
   );
 }
 
-export default LoginPage;
+export default RegistrationPage;

@@ -105,6 +105,10 @@ module.exports = {
       {
         from: './config.js',
         to: './config.js'
+      },
+      {
+        from: './src/index.css',
+        to: './index.css'
       }
     ]),
     new MiniCssExtractPlugin({

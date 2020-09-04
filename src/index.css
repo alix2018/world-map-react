@@ -1,86 +1,15 @@
-@font-face {
-  font-family: 'Alegreya Medium';
-  src: url(/public/fonts/Alegreya-Medium.ttf) format('ttf');
-}
-
-@font-face {
-  font-family: 'Lato Regular';
-  src: url(/public/fonts/Lato-Regular.ttf) format('ttf');
-}
-
-@font-face {
-  font-family: 'Lato Black';
-  src: url(/public/fonts/Lato-Black.ttf) format('ttf');
-}
-
-:host {
-  /* Colors */
-  --color-black: #272838;
-  --color-white: #FFF;
-  --color-blue: #5DA2D5;
-  --color-red: #F78888;
-  --color-yellow: #F3D250;
-  --color-error: #E20225;
-
-  /* Inputs */
-  --color-input-background: #ECF1F4;
-  --color-input-background-hover: #E3E7EA;
-  --color-input-placeholder: #717171;
-  --color-input-text: #3A3A3A;
-  --color-button-hover: #4092C4;
-
-  /* Fonts */
-  --alegreya-medium-font-family: {
-    font-family: 'Alegreya Medium', sans-serif;
-  };
-
-  --lato-regular-font-family: {
-    font-family: 'Lato Regular', sans-serif;
-  };
-
-  --lato-black-font-family: {
-    font-family: 'Lato Black', sans-serif;
-  };
-}
-
 body {
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   font-family: 'Lato-Regular', sans-serif;
   color: var(--color-black);
 }
 
-error {
-  display: flex;
-  flex-direction: row;
-  width: 320px;
-  margin: 20px auto 0;
-  align-items: center;
-  justify-content: center;
+* {
+  outline: transparent;
 }
 
-error div {
-  content: '';
-  margin-right: 10px;
-  height: 19px;
-  width: 19px;
-  min-width: 19px;
-  border-radius: 19px;
-  vertical-align: sub;
-  background-image: url(/public/assets/icon-cross.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 7px;
-  background-color: var(--color-error);
-}
-
-error p {
-  padding: 0;
-  margin: 0;
-  width: 350px;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: 0.4px;
-  text-align: left;
-  color: var(--color-error);
+input,
+button {
+  font-family: 'Lato-Regular', sans-serif;
 }

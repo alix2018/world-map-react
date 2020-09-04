@@ -2,7 +2,7 @@
   "login": {
     "a_registration": "Registration",
     "h1_time-to-travel": "Time to travel",
-    "label_email": "Email",
+    "label_email": "Email address",
     "label_password": "Password",
     "btn_login": "Log in",
     "error_combinaison": "The combination of your email and password is incorrect. Please try again."

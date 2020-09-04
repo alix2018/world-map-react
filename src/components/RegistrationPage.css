@@ -5,26 +5,9 @@
   font-family: 'Lato Regular', sans-serif;
 }
 
-article,
-.photo,
-section {
-  position: absolute;
-}
-
-article {
-  top: 0;
-  left: 0;
-  width: 52%;
-  height: 100vh;
-}
-
-img[alt~='logo'] {
-  margin: 28px 0 0 28px;
-}
-
 a {
   position: relative;
-  float: right;
+  float: left;
   margin: 26px 28px 0 0;
   padding-right: 18px;
   text-transform: uppercase;
@@ -33,13 +16,13 @@ a {
   cursor: pointer;
 }
 
-a:after {
+a:before {
   content: '';
   display: inline-block;
   position: absolute;
   top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  left: -17px;
+  transform: translateY(-50%) rotateY(180deg);
   height: 12px;
   width: 12px;
   background-image: url(../../public/assets/arrow-login.svg);
@@ -48,12 +31,28 @@ a:after {
   background-size: contain;
 }
 
-a.left {
-  display: none;
+article,
+section {
+  position: absolute;
 }
 
-a.right {
-  display: block;
+article {
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100vh;
+}
+
+img[alt~='logo'] {
+  margin: 0;
+  width: var(--form-width);
+}
+
+h2 {
+  margin: 32px 0 50px;
+  font-size: 20px;
+  color: var(--color-purple-grey);
+  font-family: 'Lato Light', sans-serif;
 }
 
 section,
@@ -71,7 +70,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   height: auto;
-  width: var(--form-width);
+  width: 350px;
 }
 
 section form div {
@@ -82,16 +81,9 @@ section form div:last-of-type {
   margin-top: 20px;
 }
 
-h1 {
-  margin: 0;
-  line-height: 100px;
-  font-size: 90px;
-  text-transform: uppercase;
-  font-family: 'Alegreya Medium', sans-serif;
-}
-
 .photo {
   top: 0;
+  left: 0;
   width: 48%;
   min-height: 100vh;
   object-fit: contain;
@@ -101,15 +93,4 @@ h1 {
   background-size: 100%;
   transform: rotateY(180deg);
   z-index: 1;
-}
-
-.photo.right {
-  /* right: 0; */
-  transform: translateX(calc(100vw - 100%));
-}
-
-.photo.left {
-  /* left: 0; */
-  transform: translateX(0);
-  transition: transform 0.5s ease;
 }
