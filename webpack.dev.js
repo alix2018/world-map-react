@@ -10,6 +10,7 @@ module.exports = merge(common, {
   devServer: {
     contentBase: BUILD_DIR,
     port: 9000,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   }
 });

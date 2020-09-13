@@ -6,5 +6,12 @@
     "label_password": "Password",
     "btn_login": "Log in",
     "error_combinaison": "The combination of your email and password is incorrect. Please try again."
+  },
+  "registration": {
+    "a_login": "Login",
+    "h2_sign-up": "Sign up to follow your trips!",
+    "label_email": "Email address",
+    "label_password": "Password",
+    "btn_register": "Register"
   }
 }

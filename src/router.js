@@ -4,12 +4,8 @@ import Registration from './containers/Registration';
 import Home from './containers/Home';
 
 const routes = {
-  '/': () => (
-    <>
-      <Login/>
-      <Registration/>
-    </>
-  ),
+  '/': () => <Login/>,
+  '/registration': () => <Registration/>,
   '/home': () => <Home/>
 };
 

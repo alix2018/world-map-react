@@ -3,7 +3,7 @@ import './RegistrationPage.css';
 import * as translations from '../../translations';
 
 function RegistrationPage({statusError, onLoginClick}) {
-  const text = translations.login;
+  const text = translations.registration;
   const [isEmailFocus, setIsEmailFocus] = useState(false);
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
@@ -41,11 +41,12 @@ function RegistrationPage({statusError, onLoginClick}) {
   }
   return (
     <>
+      <div className="photo"/>
       <article>
-        {/* <a aria-label="go to login">Login</a> */}
+        <a href="/" aria-label="go to login" onClick={onLoginClick}>{text.a_login}</a>
         <section>
           <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
-          <h2>Sign up to follow your trips!</h2>
+          <h2>{text['h2_sign-up']}</h2>
           <form>
             <div>
               <label className={isEmailFocus ? 'active' : ''} aria-label="email-field" onClick={onEmailFocus}>{text.label_email}</label>
@@ -61,10 +62,10 @@ function RegistrationPage({statusError, onLoginClick}) {
           {statusError ? (
             <error>
               <div/>
-              <p>{statusError ? text.error_combinaison : ''}</p>
+              <p>{statusError ? 'LOGIN ERROR' : ''}</p>
             </error>
           ) : null}
-          <button type="submit" onClick={handleClick}>Register</button>
+          <button type="submit" onClick={handleClick}>{text.btn_register}</button>
         </section>
       </article>
     </>

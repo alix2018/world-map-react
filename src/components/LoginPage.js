@@ -42,14 +42,14 @@ function LoginPage({statusError, onLoginClick}) {
   }
 
   function onRegistrationClick() {
-    setImageSide('left');
+    // setImageSide('left');
   }
 
   return (
     <>
       <article>
         <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
-        <a aria-label="go to registration" className={imageSide}>{text.a_registration} onClick={onRegistrationClick}</a>
+        <a href="/registration" aria-label="go to registration" className={imageSide} onClick={onRegistrationClick}>{text.a_registration}</a>
         <section>
           <h1>{text['h1_time-to-travel']}</h1>
           <form>
