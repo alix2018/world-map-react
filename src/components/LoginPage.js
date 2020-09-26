@@ -9,7 +9,7 @@ function LoginPage({statusError, onLoginClick}) {
   const [passwordValue, setPasswordValue] = useState('');
   const [isPasswordFocus, setIsPasswordFocus] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [imageSide, setImageSide] = useState('right');
+  const [imageSide] = useState('right');
 
   function handleClick() {
     if (onLoginClick) {
@@ -42,7 +42,7 @@ function LoginPage({statusError, onLoginClick}) {
   }
 
   function onRegistrationClick() {
-    // setImageSide('left');
+    // TO REMOVE: setImageSide('left');
   }
 
   return (

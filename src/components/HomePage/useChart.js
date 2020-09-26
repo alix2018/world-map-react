@@ -1,11 +1,14 @@
-import * as am4core from "@amcharts/amcharts4/core"; // Core functionality
-import * as am4maps from "@amcharts/amcharts4/maps"; // Maps
-import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
-import am4geodata_continentsLow from "@amcharts/amcharts4-geodata/continentsLow";
+import * as am4core from '@amcharts/amcharts4/core'; // Core functionality
+import * as am4maps from '@amcharts/amcharts4/maps'; // Maps
+import am4geodata_worldLow from '@amcharts/amcharts4-geodata/worldLow'; // eslint-disable-line camelcase
+import am4geodata_continentsLow from '@amcharts/amcharts4-geodata/continentsLow'; // eslint-disable-line camelcase
 import {globeIconPath} from './globeIconPath';
 
 function useChart(chartDiv) {
+/* eslint-disable */
+
   var chart = am4core.create(chartDiv, am4maps.MapChart);
+
   // Set projection
   chart.projection = new am4maps.projections.Mercator();
 
@@ -154,6 +157,8 @@ function useChart(chartDiv) {
   label.dy = -5;
   label.text = "Back to continents map";
   label.states.create("hover").properties.fill = hoverColor;
+
+  /* eslint-enable */
 
   return chart;
 }
