@@ -99,7 +99,7 @@
     "terser-webpack-plugin": "2.2.1",
     "to-string-loader": "1.1.6",
     "url-loader": "2.3.0",
-    "webpack": "4.29.6",
+    "webpack": "4.44.1",
     "webpack-bundle-analyzer": "3.6.0",
     "webpack-cli": "3.3.0",
     "webpack-dev-server": "3.2.1",
@@ -109,6 +109,8 @@
     "xo": "0.24.0"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "4.10.2",
+    "@amcharts/amcharts4-geodata": "4.1.17",
     "hookrouter": "1.2.3",
     "react": "16.8.6",
     "react-dom": "16.8.6",

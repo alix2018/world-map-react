@@ -1,0 +1,14 @@
+@import url('../../App.css');
+
+:host {
+  font-family: 'Lato Regular', sans-serif;
+}
+
+h1 {
+  color: red;
+}
+
+#chartdiv {
+  width: 100vw;
+  height: 500px;
+}

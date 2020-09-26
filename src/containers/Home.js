@@ -1,8 +1,15 @@
 import React from 'react';
-import HomePage from '../components/HomePage';
+import root from 'react-shadow';
+import HomePage from '../components/HomePage/HomePage';
+import styles from '../components/HomePage/HomePage.css';
 
 function Home() {
-  return <HomePage/>;
+  return (
+    <root.section id="home-page">
+      <HomePage/>
+      <style type="text/css">{styles}</style>
+    </root.section>
+  );
 }
 
 export default Home;
