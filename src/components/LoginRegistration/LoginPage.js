@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './LoginPage.css';
-import * as translations from '../../translations';
+import * as translations from '../../../translations';
 
 function LoginPage({statusError, onLoginClick}) {
   const text = translations.login;

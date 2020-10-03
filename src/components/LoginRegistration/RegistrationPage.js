@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './RegistrationPage.css';
-import * as translations from '../../translations';
+import * as translations from '../../../translations';
 
 function RegistrationPage({statusError, onLoginClick}) {
   const text = translations.registration;

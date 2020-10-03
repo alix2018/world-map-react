@@ -1,7 +1,7 @@
 import React from 'react';
 import root from 'react-shadow';
-import RegistrationPage from '../components/RegistrationPage';
-import styles from '../components/RegistrationPage.css';
+import RegistrationPage from '../components/LoginRegistration/RegistrationPage';
+import styles from '../components/LoginRegistration/RegistrationPage.css';
 
 function Registration() {
   return (
