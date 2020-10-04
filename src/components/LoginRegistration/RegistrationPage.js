@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './RegistrationPage.css';
 import * as translations from '../../../translations';
 
-function RegistrationPage({statusError, onLoginClick}) {
+function RegistrationPage({registrationError, onRegistrationClick}) {
   const text = translations.registration;
   const [isEmailFocus, setIsEmailFocus] = useState(false);
   const [emailValue, setEmailValue] = useState('');
@@ -10,9 +10,9 @@ function RegistrationPage({statusError, onLoginClick}) {
   const [isPasswordFocus, setIsPasswordFocus] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  function handleClick() {
-    if (onLoginClick) {
-      onLoginClick(emailValue, passwordValue);
+  function handleSubmitClick() {
+    if (onRegistrationClick) {
+      onRegistrationClick(emailValue, passwordValue);
     }
   }
 
@@ -39,6 +39,11 @@ function RegistrationPage({statusError, onLoginClick}) {
   function toggleShowPassword() {
     setShowPassword(!showPassword);
   }
+
+  function onLoginClick() {
+    // TO REMOVE: setImageSide('right');
+  }
+
   return (
     <>
       <div className="photo"/>
@@ -59,13 +64,13 @@ function RegistrationPage({statusError, onLoginClick}) {
               <img hidden={!showPassword} alt="eye hide" src="/public/assets/password-hide.svg" onClick={toggleShowPassword}/>
             </div>
           </form>
-          {statusError ? (
+          {registrationError ? (
             <error>
               <div/>
-              <p>{statusError ? 'LOGIN ERROR' : ''}</p>
+              <p>{registrationError ? 'Something went wrong' : ''}</p>
             </error>
           ) : null}
-          <button type="submit" onClick={handleClick}>{text.btn_register}</button>
+          <button type="submit" onClick={handleSubmitClick}>{text.btn_register}</button>
         </section>
       </article>
     </>

@@ -11,7 +11,7 @@ function LoginPage({statusError, onLoginClick}) {
   const [showPassword, setShowPassword] = useState(false);
   const [imageSide] = useState('right');
 
-  function handleClick() {
+  function handleSubmitClick() {
     if (onLoginClick) {
       onLoginClick(emailValue, passwordValue);
     }
@@ -70,7 +70,7 @@ function LoginPage({statusError, onLoginClick}) {
               <p>{statusError ? text.error_combinaison : ''}</p>
             </error>
           ) : null}
-          <button type="submit" onClick={handleClick}>{text.btn_login}</button>
+          <button type="submit" onClick={handleSubmitClick}>{text.btn_login}</button>
         </section>
       </article>
       <div className={`photo ${imageSide}`}/>

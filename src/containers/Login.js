@@ -14,13 +14,14 @@ function Login() {
   const statusError = useSelector(getStatusError);
   const token = useSelector(getToken);
 
-  if (token && !Cookies.getItem('token')) {
-    Cookies.setItem('token', token);
-    navigate('/home');
+  if (token && !Cookies.getItem('accessToken')) {
+    Cookies.setItem('accessToken', token);
   }
 
-  if (Cookies.getItem('token')) {
+  if (Cookies.getItem('accessToken')) {
     navigate('/home');
+  } else {
+    navigate('/');
   }
 
   function handleLoginClick(email, password) {
