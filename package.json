@@ -42,7 +42,7 @@
       "unicorn/regex-shorthand": 0
     },
     "ignores": [
-      "docs"
+      "dist"
     ]
   },
   "repository": {

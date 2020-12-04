@@ -20,7 +20,7 @@ const devMode = mode === 'dev';
 
 const PATHS = {
   APP_DIR: path.resolve(__dirname, 'src'),
-  BUILD_DIR: path.resolve(__dirname, 'docs'),
+  BUILD_DIR: path.resolve(__dirname, 'dist'),
   PUBLIC_DIR: path.resolve(__dirname, 'public')
 };
 
