@@ -40,7 +40,7 @@ error {
   display: flex;
   flex-direction: row;
   width: 320px;
-  margin: 20px auto 0;
+  margin: 10px auto 0;
   align-items: center;
   justify-content: center;
 }
@@ -51,7 +51,7 @@ error div {
   height: 19px;
   width: 19px;
   min-width: 19px;
-  border-radius: 19px;
+  border-radius: 50%;
   vertical-align: sub;
   background-image: url(/public/assets/icon-cross.svg);
   background-repeat: no-repeat;

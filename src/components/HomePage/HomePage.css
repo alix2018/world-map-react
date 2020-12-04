@@ -4,11 +4,8 @@
   font-family: 'Lato Regular', sans-serif;
 }
 
-h1 {
-  color: red;
-}
-
 #chartdiv {
+  margin-top: 50px;
   width: 100vw;
   height: 500px;
 }

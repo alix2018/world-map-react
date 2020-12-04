@@ -1,4 +1,4 @@
-@import url('../App.css');
+@import url('../../App.css');
 @import url('./Form.css');
 
 :host {
@@ -31,6 +31,11 @@ a {
   font-size: 14px;
   color: var(--color-blue);
   cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 a:after {
@@ -42,7 +47,7 @@ a:after {
   transform: translateY(-50%);
   height: 12px;
   width: 12px;
-  background-image: url(../../public/assets/arrow-login.svg);
+  background-image: url(../../../public/assets/arrow-login.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -95,10 +100,10 @@ h1 {
   width: 48%;
   min-height: 100vh;
   object-fit: contain;
-  background-image: url(../../public/assets/landscape.jpg);
+  background-image: url(../../../public/assets/landscape.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   transform: rotateY(180deg);
   z-index: 1;
 }

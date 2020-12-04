@@ -2,8 +2,8 @@ import React from 'react';
 import root from 'react-shadow';
 import {navigate} from 'hookrouter';
 import {useSelector, useDispatch} from 'react-redux';
-import LoginPage from '../components/LoginPage';
-import styles from '../components/LoginPage.css';
+import LoginPage from '../components/LoginRegistration/LoginPage';
+import styles from '../components/LoginRegistration/LoginPage.css';
 import {fetchToken} from '../store/actions/login';
 import {getIsLoading, getStatusError, getToken} from '../store/selectors/login';
 import Cookies from '../helpers/cookies';
@@ -14,13 +14,14 @@ function Login() {
   const statusError = useSelector(getStatusError);
   const token = useSelector(getToken);
 
-  if (token && !Cookies.getItem('token')) {
-    Cookies.setItem('token', token);
-    navigate('/home');
+  if (token && !Cookies.getItem('accessToken')) {
+    Cookies.setItem('accessToken', token);
   }
 
-  if (Cookies.getItem('token')) {
+  if (Cookies.getItem('accessToken')) {
     navigate('/home');
+  } else {
+    navigate('/');
   }
 
   function handleLoginClick(email, password) {
