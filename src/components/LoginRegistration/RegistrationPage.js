@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {A} from 'hookrouter';
 import './RegistrationPage.css';
 import * as translations from '../../../translations';
 
@@ -56,7 +57,7 @@ function RegistrationPage({registrationError, onRegistrationClick}) {
     <>
       <div className="photo"/>
       <article>
-        <a href="/" aria-label="go to login" onClick={onLoginClick}>{text.a_login}</a>
+        <A href="/" aria-label="go to login" onClick={onLoginClick}>{text.a_login}</A>
         <section>
           <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
           <h2>{text['h2_sign-up']}</h2>

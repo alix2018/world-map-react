@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {A} from 'hookrouter';
 import './LoginPage.css';
 import * as translations from '../../../translations';
 
@@ -49,7 +50,7 @@ function LoginPage({statusError, onLoginClick}) {
     <>
       <article>
         <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
-        <a href="/registration" aria-label="go to registration" className={imageSide} onClick={onRegistrationClick}>{text.a_registration}</a>
+        <A href="/registration" aria-label="go to registration" className={imageSide} onClick={onRegistrationClick}>{text.a_registration}</A>
         <section>
           <h1>{text['h1_time-to-travel']}</h1>
           <form>

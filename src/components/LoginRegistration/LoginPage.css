@@ -118,3 +118,14 @@ h1 {
   transform: translateX(0);
   transition: transform 0.5s ease;
 }
+
+@media only screen and (max-width: 850px) {
+  .photo {
+    display: none;
+  }
+
+  article {
+    left: initial;
+    width: 100%;
+  }
+}
