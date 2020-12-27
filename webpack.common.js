@@ -73,7 +73,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ['babel-loader', '@svgr/webpack'],
+        use: ['@svgr/webpack']
       },
       {
         test: /\.(ttf|woff)$/,
