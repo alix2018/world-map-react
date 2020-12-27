@@ -59,7 +59,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg)$/,
+        test: /\.(png|jpg)$/,
         use: [
           'url-loader',
           {
@@ -70,6 +70,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        use: ['babel-loader', '@svgr/webpack'],
       },
       {
         test: /\.(ttf|woff)$/,
