@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {A} from 'hookrouter';
 import './LoginPage.css';
 import * as translations from '../../../translations';
+import Loader from '../Loader/Loader.js';
 
 function LoginPage({statusError, onLoginClick}) {
   const text = translations.login;
@@ -48,7 +49,9 @@ function LoginPage({statusError, onLoginClick}) {
 
   return (
     <>
-      <article>
+      <Loader></Loader>
+
+      {/* <article>
         <img alt="world mappie logo" src="/public/assets/worldmappie.svg" width="120px"/>
         <A href="/registration" aria-label="go to registration" className={imageSide} onClick={onRegistrationClick}>{text.a_registration}</A>
         <section>
@@ -73,7 +76,7 @@ function LoginPage({statusError, onLoginClick}) {
           ) : null}
           <button type="submit" onClick={handleSubmitClick}>{text.btn_login}</button>
         </section>
-      </article>
+      </article> */}
       <div className={`photo ${imageSide}`}/>
     </>
   );
