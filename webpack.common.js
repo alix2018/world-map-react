@@ -15,8 +15,8 @@ const manifestJSON = require('./manifest.json');
 const indexMode = process.argv.findIndex(el => {
   return el === '--mode';
 });
-const mode = process.argv[indexMode + 1] === 'production' ? 'prod' : 'dev';
-const devMode = mode === 'dev';
+const mode = process.argv[indexMode + 1];
+const devMode = mode === 'development';
 
 const PATHS = {
   APP_DIR: path.resolve(__dirname, 'src'),
@@ -103,7 +103,7 @@ module.exports = {
         to: 'public/assets'
       },
       {
-        from: './config.js',
+        from: './src/config.js',
         to: './config.js'
       },
       {
@@ -133,6 +133,9 @@ module.exports = {
         progressive: true
       },
       plugins: [
+        new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify(mode)
+        }),
         imageminMozjpeg({
           quality: 85
         })

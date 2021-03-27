@@ -9,4 +9,4 @@ package-lock.json
 files
 .jshintrc
 /dist
-/config.js
+/src/config.js

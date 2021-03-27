@@ -1,6 +1,9 @@
-import '../../config';
-
+/* TO FIX
+import '../config';
 const {baseUrl} = config; // eslint-disable-line no-undef
+*/
+
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://worldmappie.stephaniealix.com/api' : 'http://localhost:3000/api';
 
 function errorHandler(res) {
   if (!res.ok) {
