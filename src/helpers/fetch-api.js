@@ -3,7 +3,7 @@ import '../config';
 const {baseUrl} = config; // eslint-disable-line no-undef
 */
 
-const baseUrl = process.env.NODE_ENV === 'production' ? 'https://worldmappie.stephaniealix.com/api' : 'http://localhost:3000/api';
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://worldmappie.stephaniealix.com/api' : 'http://localhost:3000';
 
 function errorHandler(res) {
   if (!res.ok) {
@@ -17,20 +17,18 @@ function errorHandler(res) {
 }
 
 export const get = (urlPath, config = {}) => {
-  const finalUrl = new URL(urlPath, baseUrl);
-  const stringUrl = finalUrl.toString();
+  const url = `${baseUrl}${urlPath}`;
 
-  return fetch(stringUrl, {
+  return fetch(url, {
     ...config,
     method: 'GET'
   });
 };
 
 export const post = (urlPath, body, config = {headers: {}}) => {
-  const finalUrl = new URL(urlPath, baseUrl);
-  const stringUrl = finalUrl.toString();
+  const url = `${baseUrl}${urlPath}`;
 
-  return fetch(stringUrl, {
+  return fetch(url, {
     ...config,
     method: 'POST',
     headers: {
@@ -41,10 +39,9 @@ export const post = (urlPath, body, config = {headers: {}}) => {
 };
 
 export const postJson = (urlPath, body, config = {headers: {}}) => {
-  const finalUrl = new URL(urlPath, baseUrl);
-  const stringUrl = finalUrl.toString();
+  const url = `${baseUrl}${urlPath}`;
 
-  return fetch(stringUrl, {
+  return fetch(url, {
     ...config,
     method: 'POST',
     headers: {
