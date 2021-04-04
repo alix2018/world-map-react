@@ -16,11 +16,11 @@ export const getToken = createSelector(
   }
 );
 
-export const getStatusError = createSelector(
+export const getError = createSelector(
   getLoginState,
   loginState => {
-    if (loginState.error && loginState.error.status) {
-      return loginState.error.status;
+    if (loginState.error) {
+      return loginState.error;
     }
   }
 );
