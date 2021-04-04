@@ -1,4 +1,7 @@
 {
+  "global" : {
+    "error_generic": "Something went wrong, try again later!"
+  },
   "login": {
     "a_registration": "Registration",
     "h1_time-to-travel": "Time to travel",

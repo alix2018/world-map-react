@@ -1,16 +1,30 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {A} from 'hookrouter';
 import './LoginPage.css';
-import * as translations from '../../../translations';
+import * as translations from '../../translations';
 
-function LoginPage({statusError, onLoginClick}) {
+function LoginPage({error, onLoginClick}) {
   const text = translations.login;
   const [isEmailFocus, setIsEmailFocus] = useState(false);
   const [emailValue, setEmailValue] = useState('');
+  const [loginError, setLoginError] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [isPasswordFocus, setIsPasswordFocus] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [imageSide] = useState('right');
+
+  useEffect(() => {
+    if (error) {
+      switch (error.code) {
+        case 'credentials_do_not_match':
+        case 'email_does_not_exist':
+          setLoginError(text.error_combinaison);
+          break;
+        default:
+          setLoginError(translations.global.error_generic);
+      }
+    }
+  }, [error]);
 
   function handleSubmitClick() {
     if (onLoginClick) {
@@ -65,10 +79,10 @@ function LoginPage({statusError, onLoginClick}) {
               <img hidden={!showPassword} alt="eye hide" src="/public/assets/password-hide.svg" onClick={toggleShowPassword}/>
             </div>
           </form>
-          {statusError ? (
+          {loginError ? (
             <error>
               <div/>
-              <p>{statusError ? text.error_combinaison : ''}</p>
+              <p>{loginError}</p>
             </error>
           ) : null}
           <button type="submit" onClick={handleSubmitClick}>{text.btn_login}</button>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {A} from 'hookrouter';
 import './RegistrationPage.css';
-import * as translations from '../../../translations';
+import * as translations from '../../translations';
 
 function RegistrationPage({registrationError, onRegistrationClick}) {
   const text = translations.registration;
