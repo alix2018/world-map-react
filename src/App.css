@@ -82,3 +82,63 @@ error p {
     left: 0;
   }
 }
+
+/* Loader */
+
+.loader-earth {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: auto;
+  margin-top: 40%;
+}
+
+#world {
+  /* display: none;
+  animation: turnAround linear 2s infinite;
+  transform-origin: center;
+  transform-box: fill-box; */
+}
+
+#plane {
+  animation: turnAround linear 5s infinite;
+
+  /* display: none; */
+}
+
+@keyframes turnAround {
+  from {
+    transform: rotateZ(360deg);
+  }
+
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+.line {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 40%;
+}
+
+.line path {
+  stroke-dasharray: 1000;
+  animation: fill 4.2s ease-out infinite;
+}
+
+@keyframes fill {
+  0% {
+    stroke-dashoffset: -1000;
+  }
+
+  90% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
